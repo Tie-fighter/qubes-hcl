@@ -29,5 +29,5 @@ jobs:
         with:
           name: full-list.yml
           path: full-list.yml
-        if-no-files-found: error
-        retention-days: 0
+          if-no-files-found: error
+          retention-days: 0
