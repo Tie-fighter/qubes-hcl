@@ -18,5 +18,16 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Discover all reports
-        run: ls -haxl
+      - name: Merge all reports
+        run: cat *.yml > full-list.yml
+      
+      - name: Lint
+        run: echo "TODO Linting"
+        
+      - name: Upload the full-list.yml artifact
+        uses: actions/upload-artifact@v2.2.4
+          with:
+            name: full-list.yml
+            path: full-list.yml
+          if-no-files-found: error
+          retention-days: 0
