@@ -17,11 +17,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Count reports
+      - name: Count files
         run: echo "Number of files:"; find . -name "*.yml" | wc -l
         
       - name: Count reports
-        run: echo "Number of reports:"; grep "qubes:" wc -l 
+        run: echo "Number of reports:"; grep "qubes:" *.yml | wc -l 
 
       # Runs a single command using the runners shell
       - name: Count reports per version
